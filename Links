@@ -1,0 +1,9 @@
+https://www.kaggle.com/datasets/nazmul0087/ct-kidney-dataset-normal-cyst-tumor-and-stone   --DATASET link
+https://www.kaggle.com/code/ksubashreddy/kidney-major                                      -- Kaggle Notebook Link (This Notebook contains all the codes related to this project)
+https://www.kaggle.com/code/ksubashreddy/ct-classification                                 -- Verification Notebook Link (This is used at the time for deployment to verify wheather the uploaded image is CT image or Normal image)
+-- Drive Links -- 
+https://drive.google.com/file/d/1OfsCRzU7SwKoMQ0IwKBuTGTSJjuqG8EA/view?usp=drive_link
+https://drive.google.com/file/d/1K2AM8PJo-1q2M4XrZiycD1s_jWKQOTVq/view?usp=drive_link
+https://drive.google.com/file/d/1bsT7buuJw4KbFMQNatp66ANaQtvPv5hQ/view?usp=drive_link
+https://drive.google.com/file/d/14EkIsjcFM_UXDfmVh86PhnI0ppt5tJvC/view?usp=drive_link
+These are the drive links for respected models pickle files you can go through them.
