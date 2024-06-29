@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload CT Scan Image</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/dropdowns/"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <style>
+      :root {
+        --light-blue: #ADD8E6; /* Light blue color */
+        --grey: #f2f2f2;
+        --light-blue:#B6DBF6;
+        --dark-blue:#005DD1;
+        --blue:#0071FF;
+
+
+      }
+
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: var(--light-blue);
+      }
+
+
+      .container{
+        max-width: 400px;
+        width:100%;
+        background: #fff;
+        padding:30px;
+        border-radius:30px;
+      }
+
+    .img-area{
+      position: relative;
+      width: 100%;
+      height:240px;
+      background: var(--grey);
+      margin-bottom:30px;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .img-area .icon{
+      font-size: 100px; 
+    }
+
+    .img-area h3{
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .select-image{
+      display: block;
+      width: 100%;
+      padding: 16px 0;
+      border-radius: 15px;
+      background: var(--blue);
+      color:#fff;
+      font-weight: 500;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: all .3s ease;
+    }
+
+    .select-image:hover{
+      background: var(--dark-blue);
+    }
+
+    .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        /* Success message */
+        .alert-success {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+
+        /* Error message */
+        .alert-error {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+
+        /* Warning message (for our 'normal image' message) */
+        .alert-warning {
+            color: #8a6d3b;
+            background-color: #fcf8e3;
+            border-color: #faebcc;
+        }
+
+        /* Info message */
+        .alert-info {
+            color: #31708f;
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+        }
+
+        /* Close button for messages */
+        .close {
+            float: right;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            opacity: .2;
+            filter: alpha(opacity=20);
+        }
+
+        .close:hover, .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: .5;
+            filter: alpha(opacity=50);
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="img-area">
+        <i class="bx bxs-cloud-upload icon"></i>
+        <h3>Upload File </h3> 
+        <div class="alertmsg">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">
+                {{ message }}
+                <button type="button" class="close btn btn-warning" data-dismiss="alert" onclick="handleCloseAlert()">&times;</button>
+              </div>
+              {% endfor %}
+          {% endif %}
+          {% endwith %} 
+        </div> 
+      </div>
+      <form method="post" enctype="multipart/form-data" action="/upload">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png"><br><br>
+        <input type="submit" value="Upload">
+    </div>
+
+
+    <script>
+
+      // Function to close the alert message and reset the form
+      function handleCloseAlert() {
+        var alertElement = document.querySelector('.alert');
+        if (alertElement) {
+          alertElement.style.display = 'none'; // Hide the alert message
+          document.getElementById('uploadForm').reset(); // Reset the form
+        }
+      }
+      // Detect page reload and redirect to home page
+      window.onload = function () {
+          if (performance.navigation.type == 1) {
+              window.location.href = "/";
+          }
+      }
+
+
+  </script>
+
+
+  </body>
+</html>

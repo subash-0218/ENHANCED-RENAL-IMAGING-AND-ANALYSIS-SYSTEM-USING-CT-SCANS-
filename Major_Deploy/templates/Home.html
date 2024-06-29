@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KidneyCare.ai</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/dropdowns/"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      .navbar {
+        background-color: #ffff;
+        height: 80px;
+        margin: 20px;
+        border-radius: 16px;
+        padding: 0.5rem;
+      }
+      .login-button {
+        color: #fff;
+        font-size: 14px;
+        padding: 8px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.3s background-color;
+      }
+
+      .navbar-toggler {
+        border: none;
+        font-size: 1.25rem;
+      }
+
+      .navbar-toggler:focus,
+      .btn-close:focus {
+        box-shadow: none;
+        outline: none;
+      }
+      .nav-link {
+        color: #666777;
+        font-weight: 500;
+        position: relative;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: #000;
+      }
+
+      @media (min-width: 991px) {
+        .nav-link::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%);
+          width: 0;
+          height: 2px;
+          background-color: #009970;
+          visibility: hidden;
+          transition: 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+          width: 100%;
+          visibility: visible;
+        }
+      }
+
+      .hero-section {
+        background: url(../static/images/kidback.jpg) no-repeat center;
+        background-size: cover;
+        width: 100%;
+      }
+
+      .hero-section::before {
+        background-color: rgb(0, 0, 0, 0.6);
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .hero-section .container {
+        height: 100vh;
+        z-index: 1;
+        position: relative;
+      }
+
+      .hero-section h1 {
+        font-size: 1.5em;
+      }
+
+      .hero-section h2 {
+        font-size: 1.1em;
+      }
+
+      .team .card-body i{
+        font-size: 20px;
+      }
+
+      .portfolio .card{
+        box-shadow: 15px 15px 40px rgba(0,0,0,0.15);
+      }
+      .team .card{
+        box-shadow: 15px 15px 40px rgba(0,0,0,0.15);
+      }
+
+      .scroll-hide {
+        transition: top 0.3s;
+      }
+
+      .scroll-hide.hidden {
+        top: -100px; /* Adjust as needed */
+      }
+
+
+
+    </style>
+
+  </head>
+  <body>
+    <!--Navbar section-->
+    <nav class="navbar navbar-expand-lg fixed-top" >
+      <div class="container-fluid">
+        <a class="navbar-brand me-auto" href="#">KidneyCare-AI</a>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              KidneyCare-AI
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2 active" aria-current="page" href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="/upload">Upload</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="mailto:hello@kidney.ai?subject=Any%20queries%2C%20feel%20free%20to%20contact%20us&body=Please%20type%20your%20query%20here.">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a href="#" class="login-button"
+          ><img
+            src="../static/images/kid.png"
+            alt="logo"
+            width="70px"
+            height="60px"
+        /></a>
+        <button
+          class="navbar-toggler pe-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <!--End of navbar-->
+
+    <!--Hero section-->
+    <section class="hero-section">
+      <div
+        class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column"
+      >
+        <h1>Kidney-Care</h1>
+        <h2>Know your Kidney</h2>
+        <p><a href="#" class="btn btn-warning mt-3">Learn More</a></p>
+      </div>
+    </section>
+    <!--End -->
+
+    <!--About kidneys-->
+
+    <section id="about" class="about-section-padding mt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-md-12 col-12">
+            <div class="about-img">
+              <img
+                src="../static/images/aboutkidimage.png"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12 col-12">
+            <div class="ps-lg-5">
+              <h2>About Kidney's</h2>
+              <p>
+                In humans, the kidneys are two reddish-brown bean-shaped
+                blood-filtering organs that are a multilobar, multipapillary
+                form of mammalian kidneys, usually without signs of external
+                lobulation. They are located on the left and right in the
+                retroperitoneal space, and in adult humans are about 12
+                centimetres (4+1⁄2 inches) in length. They receive blood from
+                the paired renal arteries; blood exits into the paired renal
+                veins. Each kidney is attached to a ureter, a tube that carries
+                excreted urine to the bladder.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--end-->
+
+    <!--What we do-->
+    <section id="services" class="services section-padding pt-5 mt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header text-center pb-5">
+              <h2>Service</h2>
+              <p>
+                Upload your kidney CT scans on the Upload page to receive an
+                expert analysis. Our advanced diagnostic system will assess your
+                scans to detect the presence of kidney cysts, tumors, or stones.
+                Gain valuable insights into your kidney health with our
+                professional-grade analysis.
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!--end-->
+
+    <!--Diseases-->
+    <section id="portfolio" class="portfolio section-padding mr-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header text-center pb-5">
+              <h3>Activities</h3>
+              <p>We identify whether cysts, stones, or tumors are present in your CT scans</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-4">
+            <div class="card text-light text-center bg-white pb-12">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img src="../static/images/kidcysts.png" alt="" class="img-fluid" width="100px" height="100px">
+                </div>
+                <h3 class="card-title">Cysts</h3>
+                <p class="lead">A renal cyst is a fluid collection in or on the kidney. There are several types based on the Bosniak classification</p>
+                <button class="btn bg-warning text-dark"><a class="cystsclass"href="https://en.wikipedia.org/wiki/Cyst">Learn More</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-4">
+            <div class="card text-light text-center bg-white pb-12">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img src="../static/images/kidcancer.png" alt="" class="img-fluid" width="117px" height="117px">
+                </div>
+                <h3 class="card-title">Tumor</h3>
+                <p class="lead">Kidney cancer, also known as renal cancer, is a group of cancers that starts in the kidney</p>
+                <button class="btn bg-warning text-dark"><a class="tumorclass"href="https://en.wikipedia.org/wiki/Kidney_tumour">Learn More</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-4">
+            <div class="card text-light text-center bg-white pb-12">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img src="../static/images/kidstones.png" alt="" class="img-fluid" width="95px" height="95px">
+                </div>
+                <h3 class="card-title">Stones</h3>
+                <p class="lead">Kidney stone disease, also known as renal calculus disease is a crystallopathy where a solid piece of material develops in the urinary tract</p>
+                <button class="btn bg-warning text-dark"><a class="stonesclass"href="https://en.wikipedia.org/wiki/Kidney_stone_disease">Learn More</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!--end-->
+
+
+    <!--Members of project-->
+    <section id="team" class="team section-padding mt-5 mb-4 pb-4 pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header text-center pb-5">
+              <h3>Team Members</h3>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="card text-center" style="max-width: 300px; margin: auto;">
+            <div class="card-body">
+              <img src="../static/images/subash.png" alt="" class="img-fluid rounded-circle" style="width: 100px; height: 100px;">
+              <h3 class="card-title py-2">Subash Reddy</h3>
+        
+              <p class="socials">
+                <i class="bi bi-twitter text-dark mx-1"></i>
+                <i class="bi bi-facebook text-dark mx-1"></i>
+                <i class="bi bi-linkedin text-dark mx-1"></i>
+                <i class="bi bi-instagram text-dark mx-1"></i>
+              </p>
+            </div>
+          </div>   
+        </div>
+        <div class="card text-center" style="max-width: 300px; margin: auto;">
+          <div class="card-body">
+            <img src="../static/images/vishnu.png" alt="" class="img-fluid rounded-circle" style="width: 100px; height: 100px;">
+            <h3 class="card-title py-2">Vishnu Vardhan</h3>
+  
+            <p class="socials">
+              <i class="bi bi-twitter text-dark mx-1"></i>
+              <i class="bi bi-facebook text-dark mx-1"></i>
+              <i class="bi bi-linkedin text-dark mx-1"></i>
+              <i class="bi bi-instagram text-dark mx-1"></i>
+            </p>
+          </div>
+        </div>   
+      </div>
+
+      </div>
+    </section>
+
+    <!--End-->
+
+
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-body-secondary">&copy; 2024 Company, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+      </footer>
+    </div>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
